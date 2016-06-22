@@ -1,5 +1,8 @@
 Purpose
 ====================================
+This is clone from https://github.com/jamesmawm/High-Frequency-Trading-Model-with-IB
+and try to make it work on HKEX.
+
 A simple trading equity trading model on Interactive Brokers' API dealing with (pseudo) high-frequency data studies.
 
 ![alt text](https://github.com/jamesmawm/High-Frequency-Trading-Model-with-IB/blob/master/output/run_02_screenshot.png?raw=true "Chart output")
@@ -42,7 +45,7 @@ Other functionalities:
 - Re-evaluating beta every some interval in seconds.
 
 And greatly inspired by these papers:
-- MIT - Developing high-frequency equities trading model 
+- MIT - Developing high-frequency equities trading model
   @ http://dspace.mit.edu/handle/1721.1/59122
 - SMU - Profiting from mean-reverting yield-curve trading strategies
   @ http://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=3488&context=lkcsb_research
