@@ -160,12 +160,13 @@ class HFTModel:
                            ib_message_type.tickPrice,
                            ib_message_type.tickSize)
 
-    def __init_stocks_data(self, symbols):
+    def __init_stocks_data(self, symbols,type='STK',exchange='SMART',currency='USD'):
         self.symbols = symbols
         self.prices = pd.DataFrame(columns=symbols)  # Init price storage
 
         for stock_symbol in symbols:
-            contract = self.ib_util.create_stock_contract(stock_symbol)
+            #contract = self.ib_util.create_stock_contract(stock_symbol)
+            contract = self.ib_util.create_stock_contract(stock_symbol,type,exchange,currency)
             self.stocks_data[stock_symbol] = StockData(contract)
 
     def __request_streaming_data(self, ib_conn):
@@ -348,13 +349,13 @@ class HFTModel:
             self.conn.cancelMktData(i)
             time.sleep(1)
 
-    def start(self, symbols, trade_qty):
+    def start(self, symbols, trade_qty,type='STK',exchange='SMART',currency='USD'):
         print "HFT model started."
 
         self.trade_qty = trade_qty
 
         self.conn.connect()  # Get IB connection object
-        self.__init_stocks_data(symbols)
+        self.__init_stocks_data(symbols,type,exchange,currency)
         self.__request_streaming_data(self.conn)
 
         print "Bootstrapping the model..."

@@ -12,8 +12,8 @@ class IBUtil:
     def __init__(self):
         pass
 
-    def create_stock_contract(self, stock):
-        contract_tuple = (stock, 'STK', 'SMART', 'USD', '', 0.0, '')
+    def create_stock_contract(self, stock,type='STK',exchange='SMART',currency='USD',expiry='',strike='0.0',right=''):
+        contract_tuple = (stock, type, exchange, currency, expiry, strike, right)
         stock_contract = self.__make_ib_contract(contract_tuple)
         return stock_contract
 

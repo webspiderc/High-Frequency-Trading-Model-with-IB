@@ -12,4 +12,4 @@ if __name__ == "__main__":
                      is_use_gateway=False,
                      evaluation_time_secs=20,
                      resample_interval_secs='30s')
-    model.start(["JPM", "C"], 100)
+    model.start(["1","2"], 500,'STK','SEHK','HKD')
